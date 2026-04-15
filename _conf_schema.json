@@ -1,0 +1,23 @@
+{
+  "enabled": {
+    "description": "启用 Token 使用报告",
+    "type": "bool",
+    "default": true
+  },
+  "rounds_per_report": {
+    "description": "自动生成报告轮次（每轮=一问一答）",
+    "type": "int",
+    "default": 10,
+    "hint": "最小值 1"
+  },
+  "monitor_session_ids": {
+    "description": "监控会话 Session ID 列表（留空表示同一 Bot 全部会话）",
+    "type": "list",
+    "default": []
+  },
+  "report_target_session_ids": {
+    "description": "报告接收会话 Session ID 列表（默认 admin，表示管理员会话）",
+    "type": "list",
+    "default": ["admin"]
+  }
+}

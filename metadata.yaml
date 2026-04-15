@@ -1,0 +1,7 @@
+name: "astrbot_plugin_dialog_usage_report"
+display_name: "对话 Token 使用报告"
+desc: "按 Bot 聚合多会话对话轮次，达到阈值后自动发送中文 Token 使用报告。"
+help: "每轮=一问一答。可用 /usage_report_now 手动生成当前 Bot 报告。"
+version: "v1.0.1"
+author: "Sakuya_mzk"
+repo: "https://example.com/astrbot_plugin_dialog_usage_report"
