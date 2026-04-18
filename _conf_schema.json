@@ -1,23 +1,56 @@
 {
   "enabled": {
-    "description": "启用 Token 使用报告",
+    "description": "启用Token使用报告",
     "type": "bool",
-    "default": true
-  },
-  "rounds_per_report": {
-    "description": "自动生成报告轮次（每轮=一问一答）",
-    "type": "int",
-    "default": 10,
-    "hint": "最小值 1"
+    "default": true,
+    "hint": "启用后开始统计并生成报告。"
   },
   "monitor_session_ids": {
-    "description": "监控会话 Session ID 列表（留空表示同一 Bot 全部会话）",
+    "description": "监控会话列表",
     "type": "list",
-    "default": []
+    "default": [],
+    "hint": "填写Session ID，可使用 /sid 查看。留空表示监控所有活跃会话。"
   },
   "report_target_session_ids": {
-    "description": "报告接收会话 Session ID 列表（默认 admin，表示管理员会话）",
+    "description": "接受报告的目标",
     "type": "list",
-    "default": ["admin"]
+    "default": ["admin"],
+    "hint": "填写接受报告的Session ID。默认 admin，发送给管理员会话。"
+  },
+  "enable_private_monitor": {
+    "description": "启用私聊Token监控",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后不统计私聊会话，也不会触发私聊报告。"
+  },
+  "private_round_trigger": {
+    "description": "私聊报告触发轮次",
+    "type": "string",
+    "default": "20",
+    "hint": "设定多少轮对话后发送报告，可设定为1~1000，留空则关闭轮次触发。"
+  },
+  "private_time_trigger_minutes": {
+    "description": "私聊报告触发时间间隔（分钟）",
+    "type": "string",
+    "default": "",
+    "hint": "按设定时间间隔发送报告，可设定为1~1440分钟，留空则关闭按时间触发。"
+  },
+  "enable_group_monitor": {
+    "description": "启用群聊Token监控",
+    "type": "bool",
+    "default": false,
+    "hint": "关闭后不统计群聊会话，也不会触发群聊报告。"
+  },
+  "group_round_trigger": {
+    "description": "群聊报告触发轮次",
+    "type": "string",
+    "default": "50",
+    "hint": "设定多少轮对话后发送报告，可设定为1~1000，留空则关闭轮次触发。"
+  },
+  "group_time_trigger_minutes": {
+    "description": "群聊报告触发时间间隔（分钟）",
+    "type": "string",
+    "default": "",
+    "hint": "按设定时间间隔发送报告，可设定为1~1440分钟，留空则关闭按时间触发。"
   }
 }
